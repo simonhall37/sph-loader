@@ -31,7 +31,11 @@ $dark-theme: mat.define-light-theme(
 @include mat.all-component-themes($light-theme);
 
 .darkMode {
-    @include mat.all-component-colors($dark-theme);
+  @include mat.all-component-colors($dark-theme);
+  .mat-drawer-container {
+    background-color: #303030 !important;
+    color: white !important;
+  }
 }
 
 html,
