@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoaderService } from '@sph-loader/icon-loader';
 
 @Component({
   selector: 'sph-loader-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'loading-harness';
+
+  constructor(
+    public loaderService: LoaderService
+  ) {}
 }
