@@ -1,11 +1,13 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
 import { LoaderConfig } from './model';
 import { LoaderService } from './services';
-import { IconLoaderComponent } from './components/icon-loader/icon-loader.component';
+import { IconLoaderComponent } from './components';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   declarations: [IconLoaderComponent],
   exports: [IconLoaderComponent],
   providers: [LoaderService]

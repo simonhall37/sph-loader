@@ -1,1 +1,19 @@
-<p>icon-loader works!</p>
+<div *ngIf="getStatus() | async">
+  <div *ngIf="svgObject$ | async as svgObj">
+    <svg
+      class="svg-container"
+      [attr.viewBox]="viewboxToString(svgObj.viewbox)"
+      [attr.height]="getHeight()"
+      [attr.width]="getWidth()"
+    >
+      <path
+        *ngFor="let path of svgObj.paths"
+        class="path"
+        [attr.d]="path"
+        [attr.stroke-width]="getStrokeWidth()"
+        [attr.stroke-dasharray]="getDashLength()"
+        [attr.stroke-dashoffset]="getDashLength()"
+      />
+    </svg>
+  </div>
+</div>
